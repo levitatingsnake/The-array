@@ -1,7 +1,7 @@
 {
   "name": "THE ARRAY · Personal Machine Command",
   "short_name": "THE ARRAY",
-  "description": "A cosmic control deck for research machines, local experiments and human creativity",
+  "description": "THE ARRAY: research instrument dashboards, local lab experiments and private ChatGPT Project development shortcuts",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

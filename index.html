@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#070a12">
   <meta name="color-scheme" content="dark">
-  <meta name="description" content="THE ARRAY. A cinematic personal command centre for independent research machines.">
+  <meta name="description" content="THE ARRAY. A cinematic personal command centre with one-tap ChatGPT Project development links and working local research labs.">
   <link rel="manifest" href="./manifest.webmanifest?v=2">
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/icon-180.png?v=2">
   <link rel="icon" href="./assets/icon-512.png?v=2" type="image/png" sizes="512x512">
@@ -78,6 +78,41 @@ body[data-brand-mode="core"] .brand-choice[data-brand-mode="core"],body[data-bra
 @media(max-width:380px){.brand-header-img{height:34px;width:34px}.topbar-brand{gap:6px}.brand-banner{height:90px}.brand-choice img{height:80px}}
 @media(prefers-reduced-motion:reduce){.brand-orbit,.brand-halo,.detail-lhundrup .detail-banner:before,.detail-blackstatic .detail-banner:before,.intro-symbol,.intro-backdrop,.intro-meter span{animation:none!important}}
 body.reduce-motion .brand-orbit,body.reduce-motion .brand-halo,body.reduce-motion .detail-lhundrup .detail-banner:before,body.reduce-motion .detail-blackstatic .detail-banner:before,body.reduce-motion .intro-symbol{animation:none!important}
+
+/* Project bridge V03: private, device-local ChatGPT launch links. */
+.chat-bridge{position:relative;margin:23px 0;padding:clamp(18px,3vw,26px);border:1px solid #8975cc73;background:radial-gradient(ellipse at 94% 12%,#502e8355,transparent 52%),linear-gradient(120deg,#13152a,#0b101b 70%);box-shadow:0 10px 35px #04030b33;isolation:isolate}
+.chat-bridge:before{content:'';position:absolute;inset:0 0 auto;height:2px;background:linear-gradient(90deg,#58dcfa,#c694ff,#fac677);opacity:.88}
+.bridge-eyebrow{font:10px var(--mono);letter-spacing:.17em;color:#d3bcfa}
+.chat-bridge h3{margin:10px 0 5px;font:700 clamp(21px,3vw,29px) var(--display);letter-spacing:-.03em;color:#f1edff}
+.chat-bridge p,.dev-directory p{font-size:12px;color:#a6abc9;line-height:1.7;max-width:75ch}
+.bridge-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.bridge-status{font:10px var(--mono);white-space:nowrap;color:#c6bcdb;padding:5px 8px;border:1px solid #ae94db55;background:#7d68be15}
+.bridge-status.linked{color:#a7f4d9;border-color:#50a99962}
+.bridge-actions{display:flex;gap:9px;flex-wrap:wrap;margin:17px 0 9px}
+.bridge-actions .primary-button,.bridge-actions .ghost-button{min-height:40px;display:inline-flex;align-items:center;justify-content:center;text-align:center}
+.bridge-actions .primary-button{border:1px solid #c7b0ff;background:linear-gradient(110deg,#5f49bb,#9e74d1);color:#fff;box-shadow:0 0 30px #a576dc38}
+.bridge-actions .primary-button:hover{filter:brightness(1.2)}
+.bridge-actions .ghost-button{border-color:#ad9bd455;color:#dce3f7}
+.bridge-hint{margin-top:11px!important;font-size:11px!important}
+.chat-link-edit{margin:15px 0 0;padding:13px;border:1px solid #6c659452;background:#080c17aa}
+.chat-link-edit summary{cursor:pointer;font:10px var(--mono);letter-spacing:.11em;color:#b9c9e4;list-style:none}
+.chat-link-edit summary:before{content:'◇';margin-right:9px;color:#bb8eff}
+.bridge-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:16px 0}
+.bridge-fields label{display:block;font:10px var(--mono);color:#a6b4ce;letter-spacing:.06em}
+.bridge-fields input{display:block;min-width:0;width:100%;margin-top:7px;padding:11px 10px;border:1px solid #8793c36b;background:#090e1a;color:#eef3ff;font:12px var(--mono);border-radius:2px}
+.bridge-field-note{font-size:11px!important;color:#8d9cb5!important;margin:5px 0 13px!important}
+.bridge-edit-actions{display:flex;gap:9px;flex-wrap:wrap}
+.bridge-edit-actions button{font:11px var(--mono);padding:9px 12px}
+.bridge-clear{border:1px solid #8e617878;background:transparent;color:#eba4bd}
+.dev-directory{margin-top:27px;padding:22px;border:1px solid #6c659452;background:linear-gradient(120deg,#111625,#0d101a)}
+.dev-directory h2{margin:0 0 12px;font:700 22px var(--display)}
+.dev-index{display:grid;gap:9px;margin-top:17px}
+.dev-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 10px;background:#080d18;border:1px solid #9ca1bd23}
+.dev-row strong{display:block;font:600 12px var(--display)}
+.dev-row small{display:block;margin-top:4px;font:9px var(--mono);color:#8c9cb0}
+.dev-row .ghost-button{font-size:10px;padding:8px 11px;flex:none}
+@media(max-width:640px){.bridge-fields{grid-template-columns:1fr}.chat-bridge{margin:16px 0;padding:17px}.bridge-actions .primary-button{flex:1 1 100%}.dev-directory{padding:16px}}
+
 </style>
   <title>THE ARRAY | Machine Command</title>
   
@@ -108,7 +143,7 @@ body.reduce-motion .brand-orbit,body.reduce-motion .brand-halo,body.reduce-motio
         <button class="rail-link" data-action="navigate" data-to="settings" title="Settings" aria-label="Settings"><span class="nav-ico">⚙</span><small>SET</small></button>
       </div>
       <span class="rail-line"></span>
-      <div class="rail-version">V 01.0</div>
+      <div class="rail-version">V 03.0</div>
     </aside>
     <div class="main-wrap">
       <header class="topbar">
@@ -305,6 +340,59 @@ window.ArrayArt={mountAll};
 'use strict';
 const D=window.ArrayData,E=window.ArrayEngine,A=window.ArrayArt,app=document.getElementById('app');
 const KEY='the-array:user:v1',HISTORY='the-array:runs:v1';
+const DEV_KEY='the-array:chatgpt-bridge:v3';
+const safeLinks=()=>{try{const obj=JSON.parse(localStorage.getItem(DEV_KEY)||'{}');return obj&&typeof obj==='object'&&!Array.isArray(obj)?obj:{};}catch{return {};}};
+const savedLinks=safeLinks();
+const devLink=m=>savedLinks[m]&&typeof savedLinks[m]==='object'?savedLinks[m]:{project:'',chat:''};
+function parseChatGPTLink(input,kind){
+  const raw=String(input||'').trim();if(!raw)return '';
+  if(raw.length>2000)throw new Error('Link is too long.');
+  let u;try{u=new URL(raw);}catch{throw new Error('Paste the full https://chatgpt.com link.');}
+  if(u.protocol!=='https:'||!['chatgpt.com','www.chatgpt.com','chat.openai.com'].includes(u.hostname)||u.username||u.password||u.port)throw new Error('Only private HTTPS ChatGPT links are accepted.');
+  if(u.pathname.startsWith('/share/')||u.pathname.startsWith('/g/g-')&&!u.pathname.startsWith('/g/g-p-'))throw new Error('Use the project or chat address bar, not a sharing/invite link.');
+  const projectRoute=/^\/g\/g-p-[a-z0-9_-]+\/project\/?$/i.test(u.pathname);
+  const chatRoute=/^\/c\/[a-z0-9_-]+\/?$/i.test(u.pathname)||/^\/g\/g-p-[a-z0-9_-]+\/(?:c|chat)\/[a-z0-9_-]+\/?$/i.test(u.pathname);
+  if(kind==='project'&&!projectRoute)throw new Error('This is not a ChatGPT Project address. Open the project in ChatGPT and copy its address.');
+  if(kind==='chat'&&!chatRoute)throw new Error('This is not an editable ChatGPT conversation address. Copy its address, not Share.');
+  return u.href;
+}
+function persistDevLinks(){try{localStorage.setItem(DEV_KEY,JSON.stringify(savedLinks));return true;}catch{toast('Browser storage unavailable. Cannot save link.');return false;}}
+function formLink(m){
+  const l=devLink(m.id),has=!!(l.project||l.chat);
+  return `<section class="chat-bridge" aria-label="ChatGPT development bridge for ${htag(m.name)}">
+    <div class="bridge-top"><span class="bridge-eyebrow">✦ DEVELOPMENT BRIDGE // CHATGPT</span><span class="bridge-status${has?' linked':''}">${has?'● LINKED':'○ AWAITING LINK'}</span></div>
+    <h3>Continue building ${htag(m.name)}.</h3>
+    <p>Jump from this machine into its existing ChatGPT Project or the exact development conversation. Your GitHub engine stays separate from this local lab.</p>
+    <div class="bridge-actions"><button type="button" class="primary-button" data-action="dev-open" data-id="${m.id}">${has?'CONTINUE DEVELOPMENT ↗':'LINK CHATGPT PROJECT ↗'}</button>
+      ${l.project&&l.chat?`<button type="button" class="ghost-button" data-action="dev-open-project" data-id="${m.id}">OPEN PROJECT HOME ↗</button>`:''}
+      <button type="button" class="ghost-button" data-action="dev-copy" data-id="${m.id}">COPY DEVELOPMENT HANDOFF ◈</button>
+    </div>
+    <details class="chat-link-edit" id="bridge-edit-${m.id}" ${has?'':'open'}><summary>${has?'EDIT SAVED DESTINATIONS':'ONE-TIME LINK SETUP'}</summary>
+      <div class="bridge-fields">
+        <label for="dev-project-${m.id}">CHATGPT PROJECT URL<input id="dev-project-${m.id}" data-link-kind="project" type="url" inputmode="url" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="https://chatgpt.com/g/g-p-…/project" value="${htag(l.project||'')}"></label>
+        <label for="dev-chat-${m.id}">CURRENT DEVELOPMENT CHAT (OPTIONAL)<input id="dev-chat-${m.id}" data-link-kind="chat" type="url" inputmode="url" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="https://chatgpt.com/c/…" value="${htag(l.chat||'')}"></label>
+      </div>
+      <p class="bridge-field-note">Open the project or conversation in ChatGPT, copy its browser address, and paste it here. Do not use Share → Anyone with a link. Links are saved privately in this browser, never in GitHub.</p>
+      <div class="bridge-edit-actions"><button type="button" class="primary-button" data-action="dev-save" data-id="${m.id}">SAVE DESTINATIONS</button>${has?`<button type="button" class="bridge-clear" data-action="dev-clear" data-id="${m.id}">REMOVE LINKS</button>`:''}</div>
+    </details>
+    <p class="bridge-hint">${has?'One tap opens '+(l.chat?'your current development chat':'the matching ChatGPT Project')+'.':'Link once per module on this device.'} The Array does not read ChatGPT conversations or synchronise progress automatically.</p>
+  </section>`;
+}
+function devDirectory(){return `<section class="dev-directory"><span class="bridge-eyebrow">PROJECT NAVIGATION / DEVICE ONLY</span><h2>ChatGPT project links</h2><p>Connect each Array machine to your existing ChatGPT Project. Once linked, its CONTINUE DEVELOPMENT button becomes a one-tap launcher. Optional current-chat links open the exact conversation.</p><div class="dev-index">${D.machines.map(m=>{const l=devLink(m.id);return `<div class="dev-row"><span><strong>${htag(m.name)}</strong><small>${l.chat?'● DIRECT CONVERSATION SAVED':l.project?'● PROJECT SAVED':'○ NOT CONNECTED'}</small></span><button type="button" class="ghost-button" data-action="dev-config" data-id="${m.id}">${l.chat||l.project?'OPEN / EDIT':'CONNECT'} ↗</button></div>`;}).join('')}</div><p>These addresses are not committed to your public repository and do not alter any ChatGPT sharing permissions.</p></section>`;}
+function goDevelopment(m,kind){const l=devLink(m),url=kind==='project'?l.project:(l.chat||l.project);if(!url){navigate('machine/'+m);setTimeout(()=>{const d=el('#bridge-edit-'+m);if(d)d.open=true;el('#dev-project-'+m)?.focus();},100);toast('Paste your private ChatGPT Project link once.');return;}
+  let clean;try{clean=parseChatGPTLink(url,kind==='project'?'project':(l.chat?'chat':'project'));}catch{toast('Saved link is invalid; please update it.');return;}
+  window.open(clean,'_blank','noopener,noreferrer');
+}
+function saveDevForm(m){if(!D.byId[m])return;const p=el('#dev-project-'+m),c=el('#dev-chat-'+m);if(!p||!c)return;
+  let project,chat;try{project=parseChatGPTLink(p.value,'project');chat=parseChatGPTLink(c.value,'chat');}catch(e){toast(e.message);return;}
+  if(!project&&!chat){toast('Paste a ChatGPT Project or conversation link first.');return;}
+  savedLinks[m]={project,chat};if(!persistDevLinks())return;render();toast('ChatGPT destination saved on this device.');
+}
+function developmentHandoff(m){const project=D.byId[m];if(!project)return '';const recent=state.history.find(r=>r.machine===m);const work=recent?`\nMost recent local Array run: ${recent.status}, ${new Date(recent.startedAt).toISOString()}, seed ${recent.seed}. ${recent.result?recent.result.summary:'No completed result.'} (synthetic/browser-local only; not evidence of the real engine).`:'';
+  return `Continue developing ${project.name} in its existing ChatGPT Project. Work from that project's established instructions, decisions and files. Canonical GitHub repository: ${project.repo?D.repo(project.repo):'not currently linked'}. ${project.desc}\nKeep claims grounded in real code, tests and evidence; distinguish synthetic demonstrations from live research. Identify the next valuable, concrete development step and implement it where access permits. ${work}`;
+}
+async function copyDevelopment(m){const text=developmentHandoff(m);if(!text)return;try{await navigator.clipboard.writeText(text);toast('Development handoff copied. Open ChatGPT and paste.');}catch{const box=document.createElement('textarea');box.value=text;box.style.position='fixed';box.style.opacity='0';document.body.append(box);box.select();let ok=false;try{ok=document.execCommand('copy');}catch{}box.remove();toast(ok?'Development handoff copied.':'Clipboard unavailable on this device.');}}
+
 const defaults={reduceMotion:false,stepMs:410,seed:42,neuroCycles:1,neuroPhase:4};
 const load=(key,fallback)=>{try{const v=JSON.parse(localStorage.getItem(key));return v??fallback;}catch{return fallback;}};
 const save=(key,value)=>{try{localStorage.setItem(key,JSON.stringify(value));return true;}catch{return false;}};
@@ -323,14 +411,14 @@ function updateClock(){const n=el('#clock');if(n)n.textContent=new Intl.DateTime
 function statusCounts(){return {runs:state.history.length,complete:state.history.filter(r=>r.status==='completed').length,machines:new Set(state.history.map(x=>x.machine)).size};}
 function portal(m,large=false){return `<article class="portal${large?' large':''}" ${motif(m)} tabindex="0" role="button" aria-label="Enter ${htag(m.name)}" data-action="open" data-id="${m.id}">
  ${art(m)}<div class="portal-top"><span class="code-id">${htag(m.code)}</span><span class="status-tag">SANDBOX</span></div>
- <div class="portal-bottom"><p class="portal-category">${htag(m.type)}</p><h3 class="portal-title">${htag(m.name)}</h3><p class="portal-desc">${htag(m.tagline)}</p><div class="portal-bottomline"><span class="enter">ENTER MACHINE ↗</span><button class="quick-go" data-action="go" data-id="${m.id}" aria-label="Run local ${htag(m.name)} experiment">GO ↗</button></div></div></article>`;}
+ <div class="portal-bottom"><p class="portal-category">${htag(m.type)}</p><h3 class="portal-title">${htag(m.name)}</h3><p class="portal-desc">${htag(m.tagline)}</p><div class="portal-bottomline"><span class="enter">ENTER MACHINE ↗</span><span style="display:flex;gap:6px"><button class="quick-go" data-action="dev-open" data-id="${m.id}" aria-label="Continue development of ${htag(m.name)} in ChatGPT" style="border-color:#aa8fea;color:#dac7ff;background:#ab7ef523">CHAT ↗</button><button class="quick-go" data-action="go" data-id="${m.id}" aria-label="Run local ${htag(m.name)} experiment">GO ↗</button></span></div></div></article>`;}
 function minor(m){return `<button class="minor-card" ${motif(m)} data-action="open" data-id="${m.id}"><span class="minor-icon">${m.id==='vencore'?'∅':m.id==='m8'?'⌁':'◇'}</span><span><h3>${htag(m.name)}</h3><p>${htag(m.type)}</p></span><span class="minor-arrow">↗</span></button>`;}
 function overview(){const s=statusCounts(),p=D.machines;return `<div class="container">
  <div class="eyebrow">CONTROL ROOM / 001</div><div class="hero-head"><div class="brand-halo" aria-hidden="true"></div><h1 class="hero-title"><span>COMMAND</span><br>THE UNKNOWN<span style="color:#84e3e1">.</span></h1><p class="hero-sub">One control deck for your experiments, strange ideas and discoveries. Enter a machine. Press GO. Watch its work unfold.</p></div>
  <div class="status-line"><span class="mini-tick">● DEVICE ONLINE</span><span><strong>${s.runs}</strong> RECORDED RUNS</span><span><strong>${s.machines}</strong> MACHINES USED</span><span>GITHUB RUNNER: NOT CONNECTED</span></div>
  <section class="brand-banner" aria-label="THE ARRAY visual identity">
    <img src="./assets/header.webp" width="1400" height="350" decoding="async" alt="THE ARRAY, Personal Machine Command, neon mandala emblem">
-   <span class="brand-banner-label">SYSTEM IDENTITY // V 02</span>
+   <span class="brand-banner-label">SYSTEM IDENTITY // V 03</span>
  </section>
  <div class="section-label"><h2>01 / FLAGSHIP MACHINES</h2><span class="line-right">THREE WORLDS</span></div><section class="portal-grid" aria-label="Flagship machines">${p.filter(x=>x.primary).map(x=>portal(x)).join('')}</section>
  <div class="section-label" style="margin-top:30px"><h2>02 / ADDITIONAL INSTRUMENTS</h2><span>LABS & APPLICATIONS</span></div><section class="flagship">${p.filter(x=>['firstcontact','neurolab','honeylark'].includes(x.id)).slice(0,2).map(x=>portal(x)).join('')}</section>
@@ -344,6 +432,7 @@ function detail(m){const r=state.run&&state.run.machine===m.id?state.run:null,ru
  <section class="detail-banner">${art(m)}<div class="detail-overlay"><button class="back-link" data-action="navigate" data-to="machines">← ALL MACHINES</button><div class="detail-headline"><div class="overline">${htag(m.code)} // ${htag(m.kicker)}</div><h1 class="title">${htag(m.name)}</h1><p>${htag(m.tagline)}</p></div></div></section>
  <div class="container detail-lower"><div class="detail-meta"><span class="chip cyan">● ${m.readonly?'STANDBY':'LOCAL LAB'}</span><span class="chip">GITHUB RUNNER <strong>NOT CONNECTED</strong></span><span class="chip">${htag(m.type)}</span></div>
  <p class="detail-summary">${htag(m.desc)}</p>
+ ${formLink(m)}
  ${m.readonly?`<div class="empty"><i>∅</i><h3>NO RUNNER INSTALLED</h3><p>${htag(m.name)} is listed as a project to revisit. No demonstration is masquerading as a working engine.</p></div>`:
  `<div class="instrument-grid"><section class="instrument-panel"><div class="panel-heading"><strong>◉ EXECUTION CONTROL</strong><em>LOCAL PROCESS</em></div><div class="control-content">
  <button class="go-disc${running?' running':''}" data-action="${running?'stop':'start'}" data-id="${m.id}" id="go-disc" aria-label="${running?'Stop current run':'Start a new browser experiment'}">${running?'STOP':'GO'}<small>${running?'CANCEL':'EXECUTE'}</small></button>
@@ -371,7 +460,7 @@ function settings(){const p=state.prefs;return `<div class="container"><div clas
   </div>
   <div class="brand-preview-tip">Your Home Screen icon uses the simplified mandala in every mode. Tap a design to change the in-app identity.</div>
 </section>
-<section class="details-card"><h3>LIVE CONNECTIONS: NOT INSTALLED</h3><p>THE ARRAY is a standalone static app that requires no account and keeps its local history on your device. To run your private Python research engines using GO, we would add a server-side GitHub App/OAuth integration, a dispatch API and verified job telemetry. A GitHub token must never be embedded in this website or stored in localStorage.</p><div class="result-actions"><a class="ghost-button" href="${D.repo('Parallax-lab')}/actions" target="_blank" rel="noopener noreferrer">PARALLAX WORKFLOWS ↗</a><a class="ghost-button" href="${D.repo('Forge-core')}/actions" target="_blank" rel="noopener noreferrer">LHÜNDRUP WORKFLOWS ↗</a><a class="ghost-button" href="${D.repo('Black-Static-Ghostprint')}/actions" target="_blank" rel="noopener noreferrer">GHOSTPRINT WORKFLOWS ↗</a></div></section><section class="details-card"><h3>PRIVACY & DATA</h3><p>Local run history is stored in your browser only. Clearing website data may erase it. Export individual completed runs as JSON to retain copies. Machine visualisations are rendered locally with Canvas and CSS; brand imagery is bundled with this website. The optional Google Fonts request is the only externally loaded styling asset.</p><button class="danger-button" data-action="clear-history">ERASE LOCAL RUN HISTORY</button></section></div>`;}
+${devDirectory()}<section class="details-card"><h3>LIVE CONNECTIONS: NOT INSTALLED</h3><p>THE ARRAY is a standalone static app that requires no account and keeps its local history on your device. To run your private Python research engines using GO, we would add a server-side GitHub App/OAuth integration, a dispatch API and verified job telemetry. A GitHub token must never be embedded in this website or stored in localStorage.</p><div class="result-actions"><a class="ghost-button" href="${D.repo('Parallax-lab')}/actions" target="_blank" rel="noopener noreferrer">PARALLAX WORKFLOWS ↗</a><a class="ghost-button" href="${D.repo('Forge-core')}/actions" target="_blank" rel="noopener noreferrer">LHÜNDRUP WORKFLOWS ↗</a><a class="ghost-button" href="${D.repo('Black-Static-Ghostprint')}/actions" target="_blank" rel="noopener noreferrer">GHOSTPRINT WORKFLOWS ↗</a></div></section><section class="details-card"><h3>PRIVACY & DATA</h3><p>Local run history is stored in your browser only. Clearing website data may erase it. Export individual completed runs as JSON to retain copies. Machine visualisations are rendered locally with Canvas and CSS; brand imagery is bundled with this website. The optional Google Fonts request is the only externally loaded styling asset.</p><button class="danger-button" data-action="clear-history">ERASE LOCAL RUN HISTORY</button></section></div>`;}
 let lastRenderedRoute='';
 function render(){const p=routeParse();const routeKey=location.hash||'#overview';if(lastRenderedRoute!==routeKey){window.scrollTo({top:0,behavior:'instant'});lastRenderedRoute=routeKey;}state.route=p.name;navbar();if(p.name==='overview')app.innerHTML=overview();else if(p.name==='machines')app.innerHTML=machineList();else if(p.name==='activity')app.innerHTML=activity();else if(p.name==='settings')app.innerHTML=settings();else if(p.name==='machine')app.innerHTML=detail(D.byId[p.id]||D.byId.parallax);else if(p.name==='run'){const run=state.history.find(x=>x.id===p.id);app.innerHTML=run?historyDetail(run):activity();}A.mountAll();if(p.name==='machine')refreshRunDisplay();}
 function navigate(to){location.hash='#'+to;if(routeParse().name===to)render();}
@@ -384,9 +473,9 @@ const control=new AbortController(),r={id:`${Date.now().toString(36)}-${machine}
 const ticker=setInterval(refreshRunDisplay,170);try{while(true){if(control.signal.aborted)throw new Error('Cancelled');const n=generator.next();if(n.done){r.result=n.value;r.progress=1;r.status='completed';break;}const e=n.value;r.progress=e.progress||0;r.events.push({...e,t:Date.now()-r.startedAt});refreshRunDisplay();const wait=e.waitMs??state.prefs.stepMs;await sleep(wait,control.signal);}}catch(err){r.status=control.signal.aborted?'cancelled':'error';r.events.push({stage:r.status.toUpperCase(),msg:r.status==='cancelled'?'Operator stopped execution.':String(err.message||err),progress:r.progress,t:Date.now()-r.startedAt});}finally{clearInterval(ticker);persistRun(r);refreshRunDisplay();toast(r.status==='completed'?'Local computation complete.':r.status==='cancelled'?'Run cancelled and logged.':'Run ended with an error.');}}
 function stop(){if(state.run?.status==='running')state.run.control.abort();}
 function downloadRun(id){const r=state.history.find(x=>x.id===id)||state.run;if(!r?.result){toast('No completed result available.');return;}const exportable={app:'THE ARRAY',provenance:'BROWSER LOCAL / SYNTHETIC',...r};delete exportable.control;const data=new Blob([JSON.stringify(exportable,null,2)],{type:'application/json'}),u=URL.createObjectURL(data);const a=document.createElement('a');a.href=u;a.download=`array-${r.machine}-${r.seed}-${r.id}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(u),2500);}
-function action(e){const b=e.target.closest('[data-action]');if(!b)return;const name=b.dataset.action,id=b.dataset.id;e.stopPropagation();switch(name){case'navigate':navigate(b.dataset.to);break;case'open':navigate('machine/'+id);break;case'go':navigate('machine/'+id);setTimeout(()=>start(id),0);break;case'start':start(id);break;case'stop':stop();break;case'filter':document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));el('#machine-list').innerHTML=machineRows(b.dataset.filter);A.mountAll();break;case'export':downloadRun(b.dataset.run);break;case'view-activity':navigate('run/'+state.run?.id);break;case'history':navigate('run/'+id);break;case'clear-history':if(confirm('Erase saved local run history from this browser?')){state.history=[];save(HISTORY,[]);render();toast('Local history cleared.');}break;case'reset-settings':state.prefs={...defaults};save(KEY,state.prefs);document.body.classList.remove('reduce-motion');render();toast('Settings restored.');break;}}
+function action(e){const b=e.target.closest('[data-action]');if(!b)return;const name=b.dataset.action,id=b.dataset.id;e.stopPropagation();switch(name){case'dev-open':goDevelopment(id);break;case'dev-open-project':goDevelopment(id,'project');break;case'dev-save':saveDevForm(id);break;case'dev-clear':if(confirm('Remove local ChatGPT links for this machine?')){delete savedLinks[id];persistDevLinks();render();toast('Project links removed.');}break;case'dev-config':navigate('machine/'+id);setTimeout(()=>{const d=el('#bridge-edit-'+id);if(d)d.open=true;el('#dev-project-'+id)?.focus();},100);break;case'dev-copy':copyDevelopment(id);break;case'navigate':navigate(b.dataset.to);break;case'open':navigate('machine/'+id);break;case'go':navigate('machine/'+id);setTimeout(()=>start(id),0);break;case'start':start(id);break;case'stop':stop();break;case'filter':document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));el('#machine-list').innerHTML=machineRows(b.dataset.filter);A.mountAll();break;case'export':downloadRun(b.dataset.run);break;case'view-activity':navigate('run/'+state.run?.id);break;case'history':navigate('run/'+id);break;case'clear-history':if(confirm('Erase saved local run history from this browser?')){state.history=[];save(HISTORY,[]);render();toast('Local history cleared.');}break;case'reset-settings':state.prefs={...defaults};save(KEY,state.prefs);document.body.classList.remove('reduce-motion');render();toast('Settings restored.');break;}}
 function settingsChanged(e){const t=e.target;if(t.id==='reduce-motion')state.prefs.reduceMotion=t.checked;else if(t.id==='speed')state.prefs.stepMs=Number(t.value);else if(t.id==='global-seed')state.prefs.seed=Math.trunc(Number(t.value)||0);else if(t.id==='neuro-cycles')state.prefs.neuroCycles=Number(t.value);else if(t.id==='neuro-phase')state.prefs.neuroPhase=Number(t.value);else if(t.id==='run-seed')state.prefs.seed=Math.trunc(Number(t.value)||0);else return;save(KEY,state.prefs);document.body.classList.toggle('reduce-motion',state.prefs.reduceMotion);if(t.id==='reduce-motion')A.mountAll();}
-document.addEventListener('click',action);document.addEventListener('change',settingsChanged);document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('[role=button][data-action=open]')){e.preventDefault();navigate('machine/'+e.target.dataset.id);}});window.addEventListener('hashchange',render);document.body.classList.toggle('reduce-motion',state.prefs.reduceMotion);updateClock();setInterval(updateClock,30000);render();if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('./service-worker.js').catch(()=>{});
+document.addEventListener('click',action);document.addEventListener('change',settingsChanged);document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.matches('input[data-link-kind]')){e.preventDefault();const id=e.target.id.replace(/^dev-(?:project|chat)-/,'');saveDevForm(id);}});document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('[role=button][data-action=open]')){e.preventDefault();navigate('machine/'+e.target.dataset.id);}});window.addEventListener('hashchange',render);document.body.classList.toggle('reduce-motion',state.prefs.reduceMotion);updateClock();setInterval(updateClock,30000);render();if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('./service-worker.js').catch(()=>{});
 })();
 
 </script>
