@@ -6,10 +6,13 @@
   <meta name="theme-color" content="#070a12">
   <meta name="color-scheme" content="dark">
   <meta name="description" content="THE ARRAY. A cinematic personal command centre for independent research machines.">
+  <link rel="manifest" href="./manifest.webmanifest?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icon-180.png?v=2">
+  <link rel="icon" href="./assets/icon-512.png?v=2" type="image/png" sizes="512x512">
   <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="THE ARRAY">
-  <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="icon" type="image/svg+xml" href="./assets/icon.svg">
+  <meta property="og:image" content="./assets/header.webp">
   
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +25,59 @@
 @media(max-width:750px){.rail{display:none}.topbar{height:69px;padding:0 20px}.topbar-brand{font-size:16px}.topbar-brand small{font-size:7px}.topbar-right .clock{display:none}.mode-pill{font-size:8px;padding:6px 8px}.container{padding:29px 18px 120px}.hero-head{display:block;margin:15px 0 18px}.hero-title{font-size:clamp(48px,11vw,70px)}.hero-sub{margin-top:18px;font-size:12px;max-width:430px}.status-line{margin:20px 0 18px}.portal-grid{grid-template-columns:1fr;gap:12px}.portal-grid>.portal:first-child{grid-column:auto;min-height:350px}.portal{min-height:340px}.portal-title{font-size:32px}.flagship{grid-template-columns:1fr;gap:12px}.flagship .portal{min-height:305px}.minor-grid{grid-template-columns:1fr}.mobile-nav{position:fixed;bottom:0;left:0;right:0;z-index:30;display:grid;grid-template-columns:repeat(4,1fr);height:calc(69px + env(safe-area-inset-bottom));padding-bottom:env(safe-area-inset-bottom);border-top:1px solid #759db342;background:#090f1cf2;backdrop-filter:blur(20px)}.mobile-nav button{border:0;background:transparent;color:#7e90a5;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1px;font:9px var(--mono);letter-spacing:.05em}.mobile-nav button span{font-size:23px;line-height:1.35}.mobile-nav button.active{color:#a3f1ee}.footer{display:none}.detail-banner{height:390px}.detail-banner:after{background:linear-gradient(0deg,#070a12,transparent 75%),linear-gradient(90deg,#070a12aa,transparent)}.detail-overlay{padding:18px 22px 30px}.detail-headline .title{font-size:clamp(44px,11vw,70px)}.detail-headline p{font-size:12px}.detail-lower{padding-top:23px}.instrument-grid{grid-template-columns:1fr}.control-content{padding:24px 19px}.go-disc{height:156px;width:156px}.console{min-height:300px}.console-screen{min-height:242px}.results{padding:17px}.source-strip{align-items:flex-start;flex-direction:column}.machine-list-item{grid-template-columns:60px 1fr auto;gap:11px}.machine-list-item .thumb{height:60px}.machine-list-item h3{font-size:14px}.machine-list-item p{font-size:10px}.machine-list-item .open{padding:0}.settings-grid{grid-template-columns:1fr}.toast{bottom:90px}}
 @media(max-width:360px){.topbar-brand{font-size:14px}.mode-pill{font-size:7px}.portal-title{font-size:29px}.console-line{grid-template-columns:39px 66px 1fr;gap:5px;font-size:9px}.machine-list-item{grid-template-columns:48px 1fr auto}.machine-list-item .thumb{height:53px}} 
 
+
+/* THE ARRAY : V2 visual identity */
+body {--brand-mandala:url('./assets/brand.webp');}
+body[data-brand-mode="ghost"] {--brand-mandala:url('./assets/black-static.webp');}
+body[data-brand-mode="gold"] {--brand-mandala:url('./assets/lhundrup.webp');}
+.brand-orbit{display:block;object-fit:cover;filter:drop-shadow(0 0 7px #879eff88);animation:mandala-float 7s ease-in-out infinite}
+.brand-rail-img{width:52px;height:52px;margin:auto;border-radius:50%}
+.brand-header-img{width:46px;height:46px;border-radius:50%}
+.brand-mark:hover .brand-orbit{filter:drop-shadow(0 0 13px #e8a8ffaa)}
+.topbar-brand{gap:10px}
+@keyframes mandala-float{0%,100%{transform:rotate(-5deg) scale(.98);filter:drop-shadow(0 0 5px #789de788)}50%{transform:rotate(5deg) scale(1.045);filter:drop-shadow(0 0 14px #bd88e3a0)}}
+.hero-head{position:relative;isolation:isolate}
+.brand-halo{position:absolute;z-index:-1;right:13%;top:50%;width:min(36vw,330px);aspect-ratio:1;transform:translateY(-49%);background-image:var(--brand-mandala);background-size:contain;background-position:center;background-repeat:no-repeat;opacity:.28;filter:drop-shadow(0 0 30px #b978f055);pointer-events:none;animation:mandala-hero 32s linear infinite}
+@keyframes mandala-hero{0%{transform:translateY(-49%) rotate(0)}100%{transform:translateY(-49%) rotate(360deg)}}
+.brand-banner{position:relative;height:clamp(105px,13vw,170px);background:linear-gradient(90deg,#050912,#111323 48%,#070b14);border:1px solid #54516d4a;overflow:hidden;margin:18px 0 27px;isolation:isolate}
+.brand-banner img{width:100%;height:100%;object-fit:contain;object-position:center;filter:saturate(1.06);opacity:.91}
+.brand-banner:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#02071611,transparent 70%);pointer-events:none}
+.brand-banner-label{position:absolute;right:13px;bottom:9px;font:8px var(--mono);letter-spacing:.12em;color:#d6bad7bd;z-index:1}
+.detail-banner{isolation:isolate}
+.detail-lhundrup .detail-banner:before,.detail-blackstatic .detail-banner:before{content:'';position:absolute;z-index:1;right:4%;top:7%;height:88%;aspect-ratio:1;background-position:center;background-repeat:no-repeat;background-size:contain;opacity:.32;pointer-events:none;filter:drop-shadow(0 0 26px #a98af44a);animation:mandala-beat 13s ease-in-out infinite}
+.detail-lhundrup .detail-banner:before{background-image:url('./assets/lhundrup.webp')}
+.detail-blackstatic .detail-banner:before{background-image:url('./assets/black-static.webp');opacity:.36}
+@keyframes mandala-beat{0%,100%{transform:scale(.92) rotate(-7deg);opacity:.27}50%{transform:scale(1.035) rotate(7deg);opacity:.42}}
+.brand-settings{margin-top:23px}
+.brand-settings .section-label{margin:8px 0 7px}
+.brand-settings-copy{font-size:12px;color:#9ba9c0;line-height:1.55;margin-bottom:16px}
+.brand-choice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.brand-choice{border:1px solid #7e87b744;background:linear-gradient(140deg,#101321,#0a0b15);padding:12px;color:#ecedfa;cursor:pointer;text-align:left;transition:transform .2s,border .2s,background .2s;min-width:0}
+.brand-choice:hover{transform:translateY(-3px);border-color:#aaa8fe99}
+.brand-choice img{width:100%;height:clamp(115px,17vw,184px);object-fit:contain;filter:drop-shadow(0 0 18px #8399d744)}
+.brand-choice span{display:block;font:700 14px var(--display);margin-top:8px}
+.brand-choice small{display:block;font:9px var(--mono);letter-spacing:.08em;color:#9baaca;margin-top:4px}
+body[data-brand-mode="core"] .brand-choice[data-brand-mode="core"],body[data-brand-mode="ghost"] .brand-choice[data-brand-mode="ghost"],body[data-brand-mode="gold"] .brand-choice[data-brand-mode="gold"]{border-color:#e4aaef;box-shadow:0 0 0 1px #a785d777,0 0 30px #ad79c923 inset}
+.brand-preview-tip{font:10px/1.6 var(--mono);color:#8296b3;margin-top:11px}
+/* A short first-visit opening sequence; static content stays usable without JS. */
+.array-intro[hidden]{display:none!important}
+.array-intro{position:fixed;z-index:1000;inset:0;background:#050711;display:grid;place-items:center;overflow:hidden;isolation:isolate}
+.intro-backdrop{position:absolute;inset:0;background:url('./assets/splash.webp') center 36%/cover no-repeat;opacity:.86;animation:intro-enter 1.4s ease-out both}
+.array-intro:before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#02041155,#06061600 28%,#05061070 54%,#03040aeb 92%);z-index:1}
+.intro-content{position:absolute;z-index:2;bottom:max(8vh,calc(env(safe-area-inset-bottom) + 38px));display:grid;justify-items:center;gap:8px;text-align:center;padding:0 18px;color:white;text-shadow:0 0 15px #08061c}
+.intro-symbol{width:clamp(75px,17vw,125px);height:auto;filter:drop-shadow(0 0 20px #ab7dee);animation:mandala-float 7s ease-in-out infinite}
+.intro-kicker,.intro-subtitle{font:10px var(--mono);letter-spacing:.25em;color:#d6c0f4}
+.intro-title{font:700 clamp(34px,10vw,58px)/1 var(--display);letter-spacing:.2em;margin:6px 0;text-shadow:0 0 30px #b17ff5}
+.intro-meter{width:240px;height:2px;background:#a69cbb55;overflow:hidden;margin:12px auto 5px}
+.intro-meter span{display:block;height:100%;background:linear-gradient(90deg,#04c5ff,#d890ff,#ffd77e);width:0%;animation:intro-meter 2.3s linear forwards}
+.intro-skip{background:#080d21ad;border:1px solid #aab9f577;color:#edf2ff;font:10px var(--mono);letter-spacing:.14em;cursor:pointer;padding:12px 18px;backdrop-filter:blur(9px)}
+.intro-skip:hover{background:#353365aa}
+@keyframes intro-meter{to{width:100%}}
+@keyframes intro-enter{from{transform:scale(1.085);opacity:.15}to{transform:scale(1);opacity:.86}}
+@media(max-width:750px){.brand-halo{right:0%;top:52%;width:52vw;opacity:.20}.brand-banner{height:110px;margin:19px 0 23px}.brand-banner img{width:135%;max-width:none;margin-left:-17.5%}.brand-banner-label{font-size:7px}.brand-choice-grid{gap:6px}.brand-choice{padding:7px}.brand-choice img{height:100px}.brand-choice span{font-size:11px}.brand-choice small{font-size:7px;letter-spacing:0}.detail-lhundrup .detail-banner:before,.detail-blackstatic .detail-banner:before{right:-20%;opacity:.26}.intro-backdrop{background-position:center 36%}}
+@media(max-width:380px){.brand-header-img{height:34px;width:34px}.topbar-brand{gap:6px}.brand-banner{height:90px}.brand-choice img{height:80px}}
+@media(prefers-reduced-motion:reduce){.brand-orbit,.brand-halo,.detail-lhundrup .detail-banner:before,.detail-blackstatic .detail-banner:before,.intro-symbol,.intro-backdrop,.intro-meter span{animation:none!important}}
+body.reduce-motion .brand-orbit,body.reduce-motion .brand-halo,body.reduce-motion .detail-lhundrup .detail-banner:before,body.reduce-motion .detail-blackstatic .detail-banner:before,body.reduce-motion .intro-symbol{animation:none!important}
 </style>
   <title>THE ARRAY | Machine Command</title>
   
@@ -30,10 +86,21 @@
   
 </head>
 <body>
+  <div id="array-intro" class="array-intro" hidden aria-label="THE ARRAY opening sequence">
+    <div class="intro-backdrop" aria-hidden="true"></div>
+    <div class="intro-content">
+      <img class="intro-symbol" src="./assets/brand.webp" width="240" height="240" alt="">
+      <div class="intro-kicker">PERSONAL MACHINE COMMAND</div>
+      <h1 class="intro-title">THE ARRAY</h1>
+      <p class="intro-subtitle">IGNITING THE UNKNOWN</p>
+      <div class="intro-meter" aria-hidden="true"><span></span></div>
+      <button class="intro-skip" type="button" id="intro-skip">ENTER THE ARRAY ↗</button>
+    </div>
+  </div>
   <div class="grain" aria-hidden="true"></div>
   <div class="shell">
     <aside class="rail" aria-label="Primary navigation">
-      <button class="brand-mark" title="Overview" data-action="navigate" data-to="overview" aria-label="THE ARRAY overview"><span class="brand-cross">✳</span></button>
+      <button class="brand-mark" title="Overview" data-action="navigate" data-to="overview" aria-label="THE ARRAY overview"><img class="brand-orbit brand-rail-img" src="./assets/icon.webp" width="52" height="52" alt=""></button>
       <div class="rail-links">
         <button class="rail-link active" data-action="navigate" data-to="overview" title="Overview" aria-label="Overview"><span class="nav-ico">⌘</span><small>HOME</small></button>
         <button class="rail-link" data-action="navigate" data-to="machines" title="Machines" aria-label="Machines"><span class="nav-ico">◈</span><small>UNITS</small></button>
@@ -45,7 +112,7 @@
     </aside>
     <div class="main-wrap">
       <header class="topbar">
-        <div class="topbar-brand"><span class="brand-glyph">✳</span><span>THE ARRAY<small>PERSONAL MACHINE COMMAND</small></span></div>
+        <div class="topbar-brand"><img class="brand-orbit brand-header-img" src="./assets/icon.webp" width="46" height="46" alt=""><span>THE ARRAY<small>PERSONAL MACHINE COMMAND</small></span></div>
         <div class="topbar-right"><span class="mode-pill"><span class="lightdot"></span> LOCAL LAB ACTIVE</span><span class="clock" id="clock">NZST · --:--</span><span class="head-id">SYSTEM / 001</span></div>
       </header>
       <main id="app" tabindex="-1"><div class="boot"><span class="loader"></span><p>Initializing instruments…</p></div></main>
@@ -259,8 +326,12 @@ function portal(m,large=false){return `<article class="portal${large?' large':''
  <div class="portal-bottom"><p class="portal-category">${htag(m.type)}</p><h3 class="portal-title">${htag(m.name)}</h3><p class="portal-desc">${htag(m.tagline)}</p><div class="portal-bottomline"><span class="enter">ENTER MACHINE ↗</span><button class="quick-go" data-action="go" data-id="${m.id}" aria-label="Run local ${htag(m.name)} experiment">GO ↗</button></div></div></article>`;}
 function minor(m){return `<button class="minor-card" ${motif(m)} data-action="open" data-id="${m.id}"><span class="minor-icon">${m.id==='vencore'?'∅':m.id==='m8'?'⌁':'◇'}</span><span><h3>${htag(m.name)}</h3><p>${htag(m.type)}</p></span><span class="minor-arrow">↗</span></button>`;}
 function overview(){const s=statusCounts(),p=D.machines;return `<div class="container">
- <div class="eyebrow">CONTROL ROOM / 001</div><div class="hero-head"><h1 class="hero-title"><span>COMMAND</span><br>THE UNKNOWN<span style="color:#84e3e1">.</span></h1><p class="hero-sub">One control deck for your experiments, strange ideas and discoveries. Enter a machine. Press GO. Watch its work unfold.</p></div>
+ <div class="eyebrow">CONTROL ROOM / 001</div><div class="hero-head"><div class="brand-halo" aria-hidden="true"></div><h1 class="hero-title"><span>COMMAND</span><br>THE UNKNOWN<span style="color:#84e3e1">.</span></h1><p class="hero-sub">One control deck for your experiments, strange ideas and discoveries. Enter a machine. Press GO. Watch its work unfold.</p></div>
  <div class="status-line"><span class="mini-tick">● DEVICE ONLINE</span><span><strong>${s.runs}</strong> RECORDED RUNS</span><span><strong>${s.machines}</strong> MACHINES USED</span><span>GITHUB RUNNER: NOT CONNECTED</span></div>
+ <section class="brand-banner" aria-label="THE ARRAY visual identity">
+   <img src="./assets/header.webp" width="1400" height="350" decoding="async" alt="THE ARRAY, Personal Machine Command, neon mandala emblem">
+   <span class="brand-banner-label">SYSTEM IDENTITY // V 02</span>
+ </section>
  <div class="section-label"><h2>01 / FLAGSHIP MACHINES</h2><span class="line-right">THREE WORLDS</span></div><section class="portal-grid" aria-label="Flagship machines">${p.filter(x=>x.primary).map(x=>portal(x)).join('')}</section>
  <div class="section-label" style="margin-top:30px"><h2>02 / ADDITIONAL INSTRUMENTS</h2><span>LABS & APPLICATIONS</span></div><section class="flagship">${p.filter(x=>['firstcontact','neurolab','honeylark'].includes(x.id)).slice(0,2).map(x=>portal(x)).join('')}</section>
  <div style="margin-top:13px">${portal(p.find(x=>x.id==='honeylark'),true)}</div>
@@ -269,7 +340,7 @@ function overview(){const s=statusCounts(),p=D.machines;return `<div class="cont
  </div>`;}
 function machineList(){return `<div class="container"><div class="eyebrow">INSTRUMENT DIRECTORY</div><div class="page-header"><h1>ALL MACHINES<span style="color:var(--ice)">.</span></h1><p>Explore, launch local experiments and inspect source repositories.</p></div><div class="toolbar"><button class="filter active" data-action="filter" data-filter="all">ALL / 09</button><button class="filter" data-action="filter" data-filter="runnable">LOCAL LAB / 06</button><button class="filter" data-action="filter" data-filter="standby">STANDBY / 03</button></div><section class="machine-list" id="machine-list">${machineRows('all')}</section></div>`;}
 function machineRows(filter){return D.machines.filter(m=>filter==='all'||filter==='runnable'&&!m.readonly||filter==='standby'&&m.readonly).map(m=>`<button class="machine-list-item" ${motif(m)} data-action="open" data-id="${m.id}"><span class="thumb">${art(m)}</span><span><div class="mtype">${htag(m.code)} / ${htag(m.type)}</div><h3>${htag(m.name)}</h3><p>${htag(m.tagline)}</p></span><span class="open">${m.readonly?'STANDBY':'OPEN'} ↗</span></button>`).join('');}
-function detail(m){const r=state.run&&state.run.machine===m.id?state.run:null,running=r?.status==='running';return `<div class="detail" ${motif(m)}>
+function detail(m){const r=state.run&&state.run.machine===m.id?state.run:null,running=r?.status==='running';return `<div class="detail detail-${m.id}" ${motif(m)}>
  <section class="detail-banner">${art(m)}<div class="detail-overlay"><button class="back-link" data-action="navigate" data-to="machines">← ALL MACHINES</button><div class="detail-headline"><div class="overline">${htag(m.code)} // ${htag(m.kicker)}</div><h1 class="title">${htag(m.name)}</h1><p>${htag(m.tagline)}</p></div></div></section>
  <div class="container detail-lower"><div class="detail-meta"><span class="chip cyan">● ${m.readonly?'STANDBY':'LOCAL LAB'}</span><span class="chip">GITHUB RUNNER <strong>NOT CONNECTED</strong></span><span class="chip">${htag(m.type)}</span></div>
  <p class="detail-summary">${htag(m.desc)}</p>
@@ -290,7 +361,17 @@ function renderEvents(events){return events.map(ev=>`<div class="console-line"><
 function resultPanel(r){const result=r.result;return `<section class="results" id="results"><div class="results-heading"><h2>${htag(result.title)}</h2><span>PROVENANCE / LOCAL LAB</span></div><p class="results-intro">${htag(result.summary)}</p><div class="result-list">${result.items.map(row=>`<div class="result-item"><span><span class="label">${htag(row.label)}</span>${row.detail?`<small>${htag(row.detail)}</small>`:''}</span><span class="val">${htag(row.value)}</span></div>`).join('')}</div><div class="result-actions"><button class="primary-button" data-action="export" data-run="${htag(r.id)}">↓ EXPORT RESULT JSON</button><button class="ghost-button" data-action="view-activity">VIEW RUN IN ACTIVITY ↗</button></div><div class="notice"><strong>CHECK THE EVIDENCE.</strong> Seed ${r.seed}. ${htag(D.byId[r.machine]?.engine||'Local computation')}. No external datasets or live GitHub jobs were accessed.</div></section>`;}
 function activity(){const s=statusCounts();return `<div class="container"><div class="eyebrow">ARCHIVE / DEVICE ONLY</div><div class="page-header"><h1>RUN HISTORY<span style="color:var(--ice)">.</span></h1><p>Actual local runs recorded in this browser, with their computed output and timestamps.</p></div><div class="status-line"><span><strong>${s.runs}</strong> ALL RUNS</span><span><strong>${s.complete}</strong> COMPLETE</span><span><strong>${state.history.filter(x=>x.status==='cancelled').length}</strong> CANCELLED</span></div>${state.history.length?`<section class="activity-list">${state.history.map(r=>`<button class="activity-item" data-action="history" data-id="${r.id}"><span><h3>${htag(D.byId[r.machine]?.name||r.machine)}</h3><p>${prettyTime(r.startedAt)} · seed ${r.seed} · ${r.events.length} stages · ${ms(r.durationMs)}</p></span><span class="${r.status==='completed'?'success':'stopped'} mono" style="font-size:11px">${htag(r.status.toUpperCase())} ↗</span></button>`).join('')}</section><button data-action="clear-history" class="danger-button" style="margin-top:22px">CLEAR LOCAL HISTORY</button>`:`<div class="empty"><i>◇</i><h3>THE ARCHIVE IS QUIET</h3><p>Your first run will appear here. Open any active instrument and press GO to generate a local evidence trail.</p><button class="primary-button" data-action="navigate" data-to="machines">OPEN MACHINES ↗</button></div>`}</div>`;}
 function historyDetail(run){const m=D.byId[run.machine]||{name:run.machine,colour:'#9fecff',secondary:'#aa9ff9'};return `<div class="container detail" ${motif(m)}><button class="back-link" data-action="navigate" data-to="activity">← ACTIVITY LOG</button><div class="eyebrow" style="margin-top:20px">ARCHIVED LOCAL RUN</div><div class="page-header"><h1>${htag(m.name)}</h1><p>${prettyTime(run.startedAt)} · ${run.events.length} computation stages · ${ms(run.durationMs)} · ${htag(run.status)}</p></div><div class="detail-meta"><span class="chip cyan">LOCAL ${htag(run.status.toUpperCase())}</span><span class="chip">SEED ${run.seed}</span><span class="chip">GITHUB RUNNER DISCONNECTED</span></div><div class="readout-panel"><div class="panel-heading"><strong>EXECUTION TRACE</strong><em>SAVED ON THIS DEVICE</em></div><div class="console-screen">${renderEvents(run.events)}</div></div>${run.result?resultPanel(run):'<div class="notice">This run did not complete. Only its recorded steps were retained.</div>'}</div>`;}
-function settings(){const p=state.prefs;return `<div class="container"><div class="eyebrow">CONTROL ROOM / CONFIGURATION</div><div class="page-header"><h1>SETTINGS<span style="color:var(--ice)">.</span></h1><p>Choose how your local instruments look, run and record.</p></div><div class="settings-grid"><section class="setting-box"><h2>VISUAL ENGINE</h2><div class="setting"><div><label for="reduce-motion">Reduced motion</label><p>Freeze the visual instruments and preserve battery.</p></div><input type="checkbox" id="reduce-motion" ${p.reduceMotion?'checked':''}></div><div class="setting"><div><label for="speed">Run stage pacing</label><p>Only changes how quickly computed stages are displayed.</p></div><select id="speed"><option value="130" ${p.stepMs===130?'selected':''}>FAST</option><option value="410" ${p.stepMs===410?'selected':''}>NORMAL</option><option value="800" ${p.stepMs===800?'selected':''}>CINEMATIC</option></select></div><div class="setting"><div><label for="global-seed">Default seed</label><p>Repeat the same synthetic computational experiments.</p></div><input id="global-seed" type="number" value="${p.seed}"></div></section><section class="setting-box"><h2>ATTENTION LAB</h2><div class="setting"><div><label for="neuro-cycles">Session cycles</label><p>One cycle = four phases.</p></div><select id="neuro-cycles">${[1,2,3,4].map(n=>`<option value="${n}" ${p.neuroCycles===n?'selected':''}>${n} ${n===1?'CYCLE':'CYCLES'}</option>`).join('')}</select></div><div class="setting"><div><label for="neuro-phase">Seconds per phase</label><p>Inhale / hold / exhale / rest.</p></div><select id="neuro-phase">${[2,3,4,5,6,7,8].map(n=>`<option value="${n}" ${p.neuroPhase===n?'selected':''}>${n} SECONDS</option>`).join('')}</select></div><div class="setting"><div><label>Restore defaults</label><p>Does not erase previous runs.</p></div><button class="ghost-button" data-action="reset-settings">RESET</button></div></section></div><section class="details-card"><h3>LIVE CONNECTIONS: NOT INSTALLED</h3><p>THE ARRAY is a standalone static app that requires no account and keeps its local history on your device. To run your private Python research engines using GO, we would add a server-side GitHub App/OAuth integration, a dispatch API and verified job telemetry. A GitHub token must never be embedded in this website or stored in localStorage.</p><div class="result-actions"><a class="ghost-button" href="${D.repo('Parallax-lab')}/actions" target="_blank" rel="noopener noreferrer">PARALLAX WORKFLOWS ↗</a><a class="ghost-button" href="${D.repo('Forge-core')}/actions" target="_blank" rel="noopener noreferrer">LHÜNDRUP WORKFLOWS ↗</a><a class="ghost-button" href="${D.repo('Black-Static-Ghostprint')}/actions" target="_blank" rel="noopener noreferrer">GHOSTPRINT WORKFLOWS ↗</a></div></section><section class="details-card"><h3>PRIVACY & DATA</h3><p>Local run history is stored in your browser only. Clearing website data may erase it. Export individual completed runs as JSON to retain copies. Images are rendered locally with Canvas and CSS; the optional Google Fonts request is the only externally loaded styling asset.</p><button class="danger-button" data-action="clear-history">ERASE LOCAL RUN HISTORY</button></section></div>`;}
+function settings(){const p=state.prefs;return `<div class="container"><div class="eyebrow">CONTROL ROOM / CONFIGURATION</div><div class="page-header"><h1>SETTINGS<span style="color:var(--ice)">.</span></h1><p>Choose how your local instruments look, run and record.</p></div><div class="settings-grid"><section class="setting-box"><h2>VISUAL ENGINE</h2><div class="setting"><div><label for="reduce-motion">Reduced motion</label><p>Freeze the visual instruments and preserve battery.</p></div><input type="checkbox" id="reduce-motion" ${p.reduceMotion?'checked':''}></div><div class="setting"><div><label for="speed">Run stage pacing</label><p>Only changes how quickly computed stages are displayed.</p></div><select id="speed"><option value="130" ${p.stepMs===130?'selected':''}>FAST</option><option value="410" ${p.stepMs===410?'selected':''}>NORMAL</option><option value="800" ${p.stepMs===800?'selected':''}>CINEMATIC</option></select></div><div class="setting"><div><label for="global-seed">Default seed</label><p>Repeat the same synthetic computational experiments.</p></div><input id="global-seed" type="number" value="${p.seed}"></div></section><section class="setting-box"><h2>ATTENTION LAB</h2><div class="setting"><div><label for="neuro-cycles">Session cycles</label><p>One cycle = four phases.</p></div><select id="neuro-cycles">${[1,2,3,4].map(n=>`<option value="${n}" ${p.neuroCycles===n?'selected':''}>${n} ${n===1?'CYCLE':'CYCLES'}</option>`).join('')}</select></div><div class="setting"><div><label for="neuro-phase">Seconds per phase</label><p>Inhale / hold / exhale / rest.</p></div><select id="neuro-phase">${[2,3,4,5,6,7,8].map(n=>`<option value="${n}" ${p.neuroPhase===n?'selected':''}>${n} SECONDS</option>`).join('')}</select></div><div class="setting"><div><label>Restore defaults</label><p>Does not erase previous runs.</p></div><button class="ghost-button" data-action="reset-settings">RESET</button></div></section></div><section class="brand-settings" aria-labelledby="visual-identity-title">
+  <div class="section-label"><h2 id="visual-identity-title">VISUAL IDENTITY / SELECT YOUR SIGNAL</h2><span class="line-right">ARTWORK EDITIONS</span></div>
+  <p class="brand-settings-copy">Choose the emblem running through your command room. This changes artwork, not experiment results.</p>
+  <div class="brand-choice-grid">
+    <button class="brand-choice" type="button" data-brand-mode="core"><img src="./assets/brand.webp" alt="Full-colour cosmic mandala" width="180" height="180" loading="lazy"><span>THE ARRAY <small>ORIGINAL SPECTRUM</small></span></button>
+    <button class="brand-choice" type="button" data-brand-mode="ghost"><img src="./assets/black-static.webp" alt="Black Static silver and cyan mandala" width="180" height="180" loading="lazy"><span>BLACK STATIC <small>OBSIDIAN FREQUENCY</small></span></button>
+    <button class="brand-choice" type="button" data-brand-mode="gold"><img src="./assets/lhundrup.webp" alt="Golden Lhündrup mandala" width="180" height="180" loading="lazy"><span>LHÜNDRUP <small>GOLDEN GENERATION</small></span></button>
+  </div>
+  <div class="brand-preview-tip">Your Home Screen icon uses the simplified mandala in every mode. Tap a design to change the in-app identity.</div>
+</section>
+<section class="details-card"><h3>LIVE CONNECTIONS: NOT INSTALLED</h3><p>THE ARRAY is a standalone static app that requires no account and keeps its local history on your device. To run your private Python research engines using GO, we would add a server-side GitHub App/OAuth integration, a dispatch API and verified job telemetry. A GitHub token must never be embedded in this website or stored in localStorage.</p><div class="result-actions"><a class="ghost-button" href="${D.repo('Parallax-lab')}/actions" target="_blank" rel="noopener noreferrer">PARALLAX WORKFLOWS ↗</a><a class="ghost-button" href="${D.repo('Forge-core')}/actions" target="_blank" rel="noopener noreferrer">LHÜNDRUP WORKFLOWS ↗</a><a class="ghost-button" href="${D.repo('Black-Static-Ghostprint')}/actions" target="_blank" rel="noopener noreferrer">GHOSTPRINT WORKFLOWS ↗</a></div></section><section class="details-card"><h3>PRIVACY & DATA</h3><p>Local run history is stored in your browser only. Clearing website data may erase it. Export individual completed runs as JSON to retain copies. Machine visualisations are rendered locally with Canvas and CSS; brand imagery is bundled with this website. The optional Google Fonts request is the only externally loaded styling asset.</p><button class="danger-button" data-action="clear-history">ERASE LOCAL RUN HISTORY</button></section></div>`;}
 let lastRenderedRoute='';
 function render(){const p=routeParse();const routeKey=location.hash||'#overview';if(lastRenderedRoute!==routeKey){window.scrollTo({top:0,behavior:'instant'});lastRenderedRoute=routeKey;}state.route=p.name;navbar();if(p.name==='overview')app.innerHTML=overview();else if(p.name==='machines')app.innerHTML=machineList();else if(p.name==='activity')app.innerHTML=activity();else if(p.name==='settings')app.innerHTML=settings();else if(p.name==='machine')app.innerHTML=detail(D.byId[p.id]||D.byId.parallax);else if(p.name==='run'){const run=state.history.find(x=>x.id===p.id);app.innerHTML=run?historyDetail(run):activity();}A.mountAll();if(p.name==='machine')refreshRunDisplay();}
 function navigate(to){location.hash='#'+to;if(routeParse().name===to)render();}
@@ -308,6 +389,32 @@ function settingsChanged(e){const t=e.target;if(t.id==='reduce-motion')state.pre
 document.addEventListener('click',action);document.addEventListener('change',settingsChanged);document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('[role=button][data-action=open]')){e.preventDefault();navigate('machine/'+e.target.dataset.id);}});window.addEventListener('hashchange',render);document.body.classList.toggle('reduce-motion',state.prefs.reduceMotion);updateClock();setInterval(updateClock,30000);render();if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('./service-worker.js').catch(()=>{});
 })();
 
+</script>
+
+<script>
+(function(){
+  'use strict';
+  const key='the-array:visual-identity:v2';
+  const permitted=new Set(['core','ghost','gold']);
+  let saved='core';try{saved=localStorage.getItem(key)||'core';}catch(e){}
+  function setIdentity(next){const mode=permitted.has(next)?next:'core';document.body.dataset.brandMode=mode;try{localStorage.setItem(key,mode);}catch(e){}
+    document.querySelectorAll('[data-brand-mode].brand-choice').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.brandMode===mode)));
+  }
+  setIdentity(saved);
+  document.addEventListener('click',event=>{const button=event.target.closest('button.brand-choice[data-brand-mode]');if(button)setIdentity(button.dataset.brandMode);});
+  const intro=document.getElementById('array-intro');if(!intro)return;
+  const motion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let seen=false;try{seen=sessionStorage.getItem('the-array:intro:v2')==='1';}catch(e){}
+  if(seen||motion)return;
+  intro.hidden=false;
+  let ended=false;
+  function finish(){if(ended)return;ended=true;try{sessionStorage.setItem('the-array:intro:v2','1');}catch(e){}
+    intro.hidden=true;document.getElementById('intro-skip')?.removeEventListener('click',finish);
+  }
+  document.getElementById('intro-skip')?.addEventListener('click',finish);
+  const timeout=setTimeout(finish,2700);
+  window.addEventListener('pagehide',()=>{clearTimeout(timeout);finish();},{once:true});
+})();
 </script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 {
-  "name": "THE ARRAY - Personal Machine Command",
+  "name": "THE ARRAY · Personal Machine Command",
   "short_name": "THE ARRAY",
-  "description": "An independent command centre for research and creative engines",
+  "description": "A cosmic control deck for research machines, local experiments and human creativity",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
@@ -10,10 +10,16 @@
   "theme_color": "#070a12",
   "icons": [
     {
-      "src": "assets/icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "assets/icon-180.png?v=2",
+      "sizes": "180x180",
+      "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png?v=2",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
