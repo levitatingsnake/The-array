@@ -1,0 +1,4 @@
+# THE ARRAY — interface, not research authority
+The ARRAY is a public dashboard/navigation project, not the canonical internal portfolio plan or a live bridge into private Python repositories. Its GO demonstrations are local and synthetic; they do not execute private research workflows.
+Keep public content limited to voluntarily disclosed project descriptions, links and verified public artifacts. Do not copy internal portfolio status, IP strategy, private repo paths beyond deliberately public information, tokens, project conversations or unpublished findings into this public repository.
+Future changes: replace speculative progress displays with clearly labelled static or consented published evidence; optional read-only links to public releases. Never suggest a private backend integration exists until implemented and secured.
